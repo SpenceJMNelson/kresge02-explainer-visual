@@ -1,0 +1,349 @@
+
+
+.cityscape-outer {
+	perspective: 1000px;
+}
+
+.cityscape-outer.disinvested {
+	background: #FAF6F4;
+}
+
+.cityscape-outer.invested {
+	background: #F8FEFF;
+}
+
+.cityscape-wrapper {
+	transform: rotateX(65deg);
+	margin:0 auto;
+	width:800px;
+	height:800px;
+	transform-style: preserve-3d;
+
+		
+
+}
+
+.cityscape {
+	animation:design-spin 30s infinite;
+	position: relative;
+	width:800px;
+	height:800px;
+	transform-style: preserve-3d;
+	display:flex;
+	justify-content: space-around;
+	align-content: space-around;
+	flex-wrap: wrap;
+
+}
+
+.cityscape .ground {
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	transform: translateZ(-1px);
+	transform-style: preserve-3d;
+}
+
+
+@keyframes design-spin{
+	0%{
+		transform: rotateZ(0deg);
+	}
+	15%{
+		transform: rotateZ(0deg);
+	}
+
+	25%{
+		transform: rotateZ(30deg);
+	}
+	45%{
+		transform: rotateZ(30deg);
+	}
+
+	55%{
+		transform: rotateZ(-60deg);
+	}
+	75%{
+		transform: rotateZ(-60deg);
+	}
+
+	85%{
+		transform: rotateZ(0deg);
+	}
+	100%{
+		transform: rotateZ(0deg);
+	}
+}
+
+.building {
+	transform-style: preserve-3d;
+	float:left;
+	transition: 900ms;
+	cursor: pointer;
+}
+
+.building:hover {
+	transform:translateZ(100px) rotateZ(10deg);
+	transition: 300ms;
+}
+
+.cityscape:active .building {
+	opacity:.3;
+}
+
+.cityscape:active .building:active {
+	opacity:1;
+}
+
+
+.building-facet {
+	position:absolute;
+	background-size:cover!important;
+	backface-visibility: hidden;
+}
+
+
+
+
+
+.building.apartments {
+
+width:150px;
+	height:150px;
+
+}
+
+
+.building.apartments .building-front{
+	background-image: url(assets/apartments/front.png);
+	width:150px;
+	height:266px;
+	transform: translateY(18px) translateZ(133px) rotateX(-90deg);
+}
+
+.building.apartments .building-back{
+	background-image: url(assets/apartments/back.png);
+	width:150px;
+	height:266px;
+	transform: translateY(-133px) translateZ(133px) rotateX(-90deg);
+}
+
+.building.apartments .building-left, .apartments .building-right{
+	background-image: url(assets/apartments/side.png);
+	width:150px;
+	height:266px;
+}
+
+.building.apartments .building-left {
+	transform: translateX(-75px) translateZ(133px) translateY(-58px) rotateY(-90deg) rotateZ(90deg);
+}
+
+.building.apartments .building-right {
+	transform: translateX(75px) translateZ(133px) translateY(-58px) rotateY(-90deg) rotateZ(90deg);
+}
+
+.building.apartments .building-top {
+	background-image: url(assets/apartments/top.png);
+	transform: translateY(0px) translateZ(266px);
+	width:150px;
+	height:150px;
+}
+
+.building.townhouse {
+bottom:0;
+width:88px;
+	height:150px;
+}
+
+
+.building.townhouse .building-front{
+	background-image: url(assets/townhouse/front/red.png);
+	width:88px;
+	height:150px;
+	transform:  translateZ(75px) translateY(75px) translateX(0px) rotateX(-90deg);
+}
+
+.building.townhouse.green .building-front{
+	background-image: url(assets/townhouse/front/green.png);
+}
+
+.building.townhouse.blue .building-front{
+	background-image: url(assets/townhouse/front/blue.png);
+}
+
+.building.townhouse.abandoned:nth-child(4n+1) .building-front{
+	background-image: url(assets/townhouse/front/abandoned1.png);
+}
+
+.building.townhouse.abandoned:nth-child(4n+2) .building-front{
+	background-image: url(assets/townhouse/front/abandoned2.png);
+}
+
+.building.townhouse.abandoned:nth-child(4n+3) .building-front{
+	background-image: url(assets/townhouse/front/abandoned3.png);
+}
+
+.building.townhouse.abandoned:nth-child(4n+4) .building-front{
+	background-image: url(assets/townhouse/front/abandoned4.png);
+}
+
+.building.townhouse .building-back{
+	background-image: url(assets/townhouse/back/normal.png);
+	width:88px;
+	height:150px;
+	transform: translateZ(75px) translateY(-75px) translateX(0px) rotateX(-90deg);
+}
+
+.building.townhouse.abandoned .building-back{
+	background-image: url(assets/townhouse/back/abandoned.png);
+}
+
+
+.building.townhouse .building-left, .townhouse .building-right{
+	background-image: url(assets/townhouse/side/normal.png);
+	width:150px;
+	height:150px;
+}
+
+.building.townhouse.abandoned .building-left, .townhouse.abandoned .building-right{
+	background-image: url(assets/townhouse/side/abandoned.png);
+	width:150px;
+	height:150px;
+}
+
+
+
+.building.townhouse .building-left {
+	transform: translateZ(75px) translateX(13px) rotateY(-90deg) rotateZ(90deg);
+}
+
+.building.townhouse .building-right {
+	transform: translateZ(75px) translateX(-75px) rotateY(-90deg) rotateZ(90deg);
+}
+
+.building.townhouse .building-top {
+	background-image: url(assets/townhouse/top/normal.png);
+	transform: translateX(-30px) translateZ(150px) translateY(30px) rotateZ(90deg);
+	width:150px;
+	height:88px;
+}
+
+
+
+.building.townhouse.abandoned .building-top {
+	background-image: url(assets/townhouse/top/abandoned.png);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.building.commercial {
+bottom:0;
+width:150px;
+	height:150px;
+}
+
+
+.building.commercial .building-front{
+	background-image: url(assets/commercial/front/cafe.png);
+	width:150px;
+	height:93px;
+	transform: translateZ(46px) translateY(103px) translateX(0px) rotateX(-90deg);
+}
+
+.building.commercial.bank .building-front{
+	background-image: url(assets/commercial/front/bank.png);
+}
+
+.building.commercial.abandoned .building-front{
+	background-image: url(assets/commercial/front/abandoned.png);
+}
+
+
+.building.commercial .building-back{
+	background-image: url(assets/commercial/back/normal.png);
+	width:150px;
+	height:93px;
+	transform: translateZ(46px) translateY(-48px) translateX(0px) rotateX(-90deg);
+}
+
+.building.commercial.abandoned .building-back{
+	background-image: url(assets/commercial/back/abandoned.png);
+}
+
+.building.commercial .building-left, .commercial .building-right{
+	background-image: url(assets/commercial/side/normal.png);
+	width:150px;
+	height:93px;
+}
+
+.building.commercial.abandoned .building-left, .commercial.abandoned .building-right{
+	background-image: url(assets/commercial/side/abandoned.png);
+
+}
+
+.building.commercial .building-left {
+	transform: translateZ(45px) translateY(25px) translateX(73px) rotateY(-90deg) rotateZ(90deg);
+}
+
+.building.commercial .building-right {
+	transform: translateZ(45px) translateY(25px) translateX(-73px)  rotateY(-90deg) rotateZ(90deg);
+}
+
+.building.commercial .building-top {
+	background-image: url(assets/commercial/top/cafe.png);
+	transform: translateX(0px) translateZ(93px) translateY(0px) rotateZ(90deg);
+	width:150px;
+	height:150px;
+}
+
+.building.commercial.bank .building-top {
+	background-image: url(assets/commercial/top/bank.png);
+	transform: translateX(0px) translateZ(93px) translateY(0px) rotateZ(90deg);
+	width:150px;
+	height:150px;
+}
+
+
+
+.building.commercial.abandoned .building-top {
+	background-image: url(assets/commercial/top/abandoned.png);
+	transform: translateX(0px) translateZ(93px) translateY(0px) rotateZ(90deg);
+	width:150px;
+	height:150px;
+}
+
+.space.playground {
+	width:300px;
+	height:150px;
+	background:#7BA43E;
+}
+
+.space.vacant-lot {
+	width:150px;
+	height:150px;
+	background:gray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
